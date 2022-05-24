@@ -9,7 +9,7 @@ In order to use the library, wrap `FakeLocalTimeZone` in `using` keyword and pro
 
 Example:
 
-```
+```csharp
 using (new FakeLocalTimeZone(TimeZoneInfo.FindSystemTimeZoneById("UTC+12")))
 {
     var localDateTime = new DateTime(2020, 12, 31, 23, 59, 59, DateTimeKind.Local);
