@@ -2,7 +2,7 @@
 using System.Reflection;
 using ReflectionMagic;
 
-namespace FakeLocalTimeZone
+namespace FakeTimeZone
 {
     /// <summary>
     /// Fake local time zone to use to switch to a different time zone. Use wisely!
