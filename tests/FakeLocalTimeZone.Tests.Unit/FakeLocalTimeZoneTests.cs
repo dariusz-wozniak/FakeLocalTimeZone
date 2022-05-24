@@ -31,6 +31,8 @@ namespace FakeLocalTimeZone.Tests.Unit
         {
             var localTimeZone = TimeZoneInfo.Local;
 
+            Assume.That(localTimeZone.Id, Is.Not.EqualTo(timeZoneId));
+
             using (new FakeLocalTimeZone(TimeZoneInfo.FindSystemTimeZoneById(timeZoneId))) {}
             
             var localTimeZoneAfterUsingFake = TimeZoneInfo.Local;
