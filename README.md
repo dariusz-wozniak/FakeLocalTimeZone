@@ -27,7 +27,7 @@ Supported frameworks
 
 For the main library, following frameworks are supported:
 
-* netcoreapp2.0
+* netcoreapp2.1
 * net6.0
 * netstandard2.0
 * net45
