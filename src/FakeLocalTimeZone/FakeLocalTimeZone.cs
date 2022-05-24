@@ -18,24 +18,25 @@ namespace FakeLocalTimeZone
         {
             try
             {
-                // .NET Framework:
-                typeof(TimeZoneInfo).AsDynamicType().s_cachedData.m_localTimeZone = timeZoneInfo;
+                // .NET Core:
+                var info = typeof(TimeZoneInfo).GetField("s_cachedData", BindingFlags.NonPublic | BindingFlags.Static);
+                object cachedData = info.GetValue(null);
+
+                var field = cachedData.GetType().GetField("_localTimeZone", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static | BindingFlags.Instance);
+                field.SetValue(cachedData, timeZoneInfo);
             }
             catch
             {
                 try
                 {
-                    // Yet another .NET Framework:
-                    typeof(TimeZoneInfo).AsDynamicType()._cachedData.m_localTimeZone = timeZoneInfo;
+                    // .NET Framework:
+                    typeof(TimeZoneInfo).AsDynamicType().s_cachedData.m_localTimeZone = timeZoneInfo;
+
                 }
                 catch
                 {
-                    // .NET Core:
-                    var info = typeof(TimeZoneInfo).GetField("s_cachedData", BindingFlags.NonPublic | BindingFlags.Static);
-                    object cachedData = info.GetValue(null);
-
-                    var field = cachedData.GetType().GetField("_localTimeZone", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static | BindingFlags.Instance);
-                    field.SetValue(cachedData, timeZoneInfo);
+                    // .NET Framework (solution #2):
+                    typeof(TimeZoneInfo).AsDynamicType()._cachedData.m_localTimeZone = timeZoneInfo;
                 }
             }
         }
