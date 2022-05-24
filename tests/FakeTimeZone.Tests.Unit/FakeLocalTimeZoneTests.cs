@@ -13,12 +13,15 @@ namespace FakeTimeZone.Tests.Unit
             foreach (var tz in TimeZoneInfo.GetSystemTimeZones()) TestContext.Out.WriteLine(tz.Id);
         }
 
-        [Test]
-        public void local_timezone_is_switched_into_faked_one()
+        [TestCase("UTC+12")]
+        [TestCase("UTC-11")] // < In case UTC+12 is a de-facto local timezone
+        public void local_timezone_is_switched_into_faked_one(string timeZoneId)
         {
-            using (new FakeTimeZone.FakeLocalTimeZone(TimeZoneInfo.FindSystemTimeZoneById("UTC+12")))
+            Assume.That(TimeZoneInfo.Local.Id, Is.Not.EqualTo(timeZoneId));
+            
+            using (new FakeLocalTimeZone(TimeZoneInfo.FindSystemTimeZoneById(timeZoneId)))
             {
-                Assert.That(TimeZoneInfo.Local.Id, Is.EqualTo("UTC+12"));
+                Assert.That(TimeZoneInfo.Local.Id, Is.EqualTo(timeZoneId));
             }
         }
 
@@ -30,7 +33,7 @@ namespace FakeTimeZone.Tests.Unit
 
             Assume.That(localTimeZone.Id, Is.Not.EqualTo(timeZoneId));
 
-            using (new FakeTimeZone.FakeLocalTimeZone(TimeZoneInfo.FindSystemTimeZoneById(timeZoneId))) {}
+            using (new FakeLocalTimeZone(TimeZoneInfo.FindSystemTimeZoneById(timeZoneId))) {}
             
             var localTimeZoneAfterUsingFake = TimeZoneInfo.Local;
             
@@ -41,7 +44,7 @@ namespace FakeTimeZone.Tests.Unit
         public void Teardown()
         {
             // Double ensure Local timezone is set back
-            using (new FakeTimeZone.FakeLocalTimeZone(TimeZoneInfo.Local)) {}
+            using (new FakeLocalTimeZone(TimeZoneInfo.Local)) {}
         }
     }
 }
