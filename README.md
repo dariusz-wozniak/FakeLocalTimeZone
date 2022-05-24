@@ -56,5 +56,5 @@ The lib has been tested for the following frameworks:
 Remarks
 =
 
-* The code of Fake comes from the StackOverflow: https://stackoverflow.com/q/44413407/297823.
+* The code of fake comes from the StackOverflow: https://stackoverflow.com/q/44413407/297823.
 * To find out all TimeZones in your system, you may use the `TimeZoneInfo.GetSystemTimeZones()` code.
