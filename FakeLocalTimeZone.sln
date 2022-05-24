@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FakeLocalTimeZone", "src\FakeLocalTimeZone\FakeLocalTimeZone.csproj", "{643831D6-8AE9-47E8-A850-BA4E63F554C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeLocalTimeZone.Tests.Unit", "tests\FakeLocalTimeZone.Tests.Unit\FakeLocalTimeZone.Tests.Unit.csproj", "{4C4E7CC4-D4DE-4059-864B-0CB5CC84DD9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{643831D6-8AE9-47E8-A850-BA4E63F554C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{643831D6-8AE9-47E8-A850-BA4E63F554C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{643831D6-8AE9-47E8-A850-BA4E63F554C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{643831D6-8AE9-47E8-A850-BA4E63F554C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C4E7CC4-D4DE-4059-864B-0CB5CC84DD9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C4E7CC4-D4DE-4059-864B-0CB5CC84DD9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C4E7CC4-D4DE-4059-864B-0CB5CC84DD9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C4E7CC4-D4DE-4059-864B-0CB5CC84DD9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6457A4A-883A-4160-B76C-D30370261EB6}
+	EndGlobalSection
+EndGlobal
