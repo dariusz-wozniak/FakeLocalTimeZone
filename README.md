@@ -55,4 +55,4 @@ Remarks
 =
 
 * The code of Fake comes from the StackOverflow: https://stackoverflow.com/q/44413407/297823.
-* To find out all TimeZones in your system, you may use the `TimeZoneInfo.GetSystemTimeZones())` code.
+* To find out all TimeZones in your system, you may use the `TimeZoneInfo.GetSystemTimeZones()` code.
