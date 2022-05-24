@@ -25,6 +25,19 @@ namespace FakeLocalTimeZone.Tests.Unit
             }
         }
 
+        [TestCase("UTC+12")]
+        [TestCase("UTC-11")] // < In case UTC+12 is a de-facto local timezone
+        public void local_timezone_is_reverted_into_original_one(string timeZoneId)
+        {
+            var localTimeZone = TimeZoneInfo.Local;
+
+            using (new FakeLocalTimeZone(TimeZoneInfo.FindSystemTimeZoneById(timeZoneId))) {}
+            
+            var localTimeZoneAfterUsingFake = TimeZoneInfo.Local;
+            
+            Assert.That(localTimeZone, Is.EqualTo(localTimeZoneAfterUsingFake));
+        }
+
         [OneTimeTearDown]
         public void Teardown()
         {
