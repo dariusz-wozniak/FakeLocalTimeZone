@@ -25,7 +25,7 @@ namespace FakeLocalTimeZone
             {
                 try
                 {
-                    // Yet another .NET Framework:
+                    // .NET Framework (solution #2):
                     typeof(TimeZoneInfo).AsDynamicType()._cachedData.m_localTimeZone = timeZoneInfo;
                 }
                 catch
