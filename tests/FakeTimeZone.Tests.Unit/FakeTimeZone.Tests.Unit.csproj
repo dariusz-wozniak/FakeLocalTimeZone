@@ -13,7 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\FakeLocalTimeZone\FakeLocalTimeZone.csproj" />
+	  <ProjectReference Include="..\..\src\FakeTimeZone\FakeTimeZone.csproj" />
 	</ItemGroup>
 
 </Project>
