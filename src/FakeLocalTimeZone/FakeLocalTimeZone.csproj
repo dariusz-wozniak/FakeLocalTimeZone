@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFrameworks>netcoreapp2.1;net6.0;netstandard2.0;net45</TargetFrameworks>
+    <Version>0.0.1</Version>
+    <Authors>Dariusz Woźniak</Authors>
+    <Description>Create fake of local TimeZone</Description>
+    <PackageProjectUrl>https://github.com/dariusz-wozniak/FakeLocalTimeZone</PackageProjectUrl>
+    <Copyright>Apache-2.0</Copyright>
+    <PackageReadmeFile></PackageReadmeFile>
+    <RepositoryUrl>https://github.com/dariusz-wozniak/FakeLocalTimeZone</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>timezone;mock;fake;unit-testing;testing;tdd</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
