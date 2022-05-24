@@ -34,7 +34,7 @@ For the main library, following frameworks are supported:
 * netstandard2.0
 * net45
 
-The lib has been tested for the following frameworks:
+The library has been tested with the following frameworks:
 
 * netcoreapp2.1
 * netcoreapp2.2
