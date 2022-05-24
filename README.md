@@ -18,6 +18,8 @@ using (new FakeLocalTimeZone(TimeZoneInfo.FindSystemTimeZoneById("UTC+12")))
     Assert.That(TimeZoneInfo.Local.Id, Is.EqualTo("UTC+12")); // ✅ Assertion passes
     Assert.That(utcDateTime, Is.EqualTo(localDateTime.AddHours(-12))); // ✅ Assertion passes
 }
+
+// Now, TimeZoneInfo.Local is the one before setup
 ```
 
 Supported frameworks
