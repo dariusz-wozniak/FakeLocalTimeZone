@@ -15,7 +15,8 @@ using (new FakeLocalTimeZone(TimeZoneInfo.FindSystemTimeZoneById("UTC+12")))
     var localDateTime = new DateTime(2020, 12, 31, 23, 59, 59, DateTimeKind.Local);
     var utcDateTime = TimeZoneInfo.ConvertTimeToUtc(localDateTime);
 
-    Assert.That(utcDateTime, Is.EqualTo(localDateTime.AddHours(-12))); // ✅ Test passes
+    Assert.That(TimeZoneInfo.Local.Id, Is.EqualTo("UTC+12")); // ✅ Assertion passes
+    Assert.That(utcDateTime, Is.EqualTo(localDateTime.AddHours(-12))); // ✅ Assertion passes
 }
 ```
 
