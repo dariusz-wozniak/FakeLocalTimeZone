@@ -2,6 +2,8 @@ A very small package that helps to fake (a.k.a. mock) system `TimeZone`.
 
 This package may be useful for testing DateTime and local/UTC conversions.
 
+[![NuGet](https://buildstats.info/nuget/FakeTimeZone)](https://www.nuget.org/packages/FakeTimeZone)
+
 Usage
 =
 
